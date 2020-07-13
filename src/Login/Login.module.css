@@ -1,0 +1,19 @@
+.listening_img {
+    max-width: 100%;
+}
+
+.o_hidden {
+    overflow: hidden !important;
+}
+
+.border_0 {
+    border: 0px;
+}
+
+.p_0 {
+    padding: 0!important;
+}
+
+.p_5 {
+    padding: 3rem!important;
+}
