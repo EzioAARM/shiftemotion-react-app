@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+    install:
+        runtime-verions:
+            nodejs: 12.x
+    pre_build:
+        commands:
+        - echo installing dependencies...
+        - npm install
+    build:
+        commands:
+        - echo build started on `date`
+        - npm run build
+    post_build:
+        commands:
+        - echo Build completed on `date`
+artifacts:
+    files:
+        - "**/*"
