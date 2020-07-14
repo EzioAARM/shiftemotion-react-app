@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d9ce2517.chunk.css",
+    "main.js": "/static/js/main.0e07d16c.chunk.js",
+    "main.js.map": "/static/js/main.0e07d16c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5854eac2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5854eac2.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.d002456e.chunk.js": "/static/js/2.d002456e.chunk.js",
+    "static/js/2.d002456e.chunk.js.map": "/static/js/2.d002456e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6acbd4581a1b87dc6925e307f51f6eeb.js": "/precache-manifest.6acbd4581a1b87dc6925e307f51f6eeb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.d9ce2517.chunk.css.map": "/static/css/main.d9ce2517.chunk.css.map",
+    "static/js/2.d002456e.chunk.js.LICENSE.txt": "/static/js/2.d002456e.chunk.js.LICENSE.txt",
+    "static/media/listening.gif": "/static/media/listening.dcc9cea8.gif",
+    "static/media/spotify.svg": "/static/media/spotify.1a1fad76.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5854eac2.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.d002456e.chunk.js",
+    "static/css/main.d9ce2517.chunk.css",
+    "static/js/main.0e07d16c.chunk.js"
+  ]
+}
