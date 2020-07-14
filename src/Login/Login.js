@@ -3,7 +3,7 @@ import estilos_login from './Login.module.css';
 import listening_gif from './../assets/img/listening.gif'
 import spotify_logo from './../assets/img/spotify.svg'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import vars from './../environment'
+import vars from '../globals'
 import Axios from 'axios';
 
 class Login extends Component {

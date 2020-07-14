@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import Axios from 'axios';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import vars from './../environment'
+import vars from '../globals'
 
 class LinkedAccount extends Component {
 
