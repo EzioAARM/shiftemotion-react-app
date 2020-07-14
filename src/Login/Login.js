@@ -3,14 +3,14 @@ import estilos_login from './Login.module.css';
 import listening_gif from './../assets/img/listening.gif'
 import spotify_logo from './../assets/img/spotify.svg'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import vars from '../globals'
+import variables from '../globals'
 import Axios from 'axios';
 
 class Login extends Component {
 
     render() {
         let scopes = 'user-read-private user-read-email user-library-read'
-        let SpotifyUrl = `https://accounts.spotify.com/authorize?client_id=${vars.spotify_client}&response_type=code&redirect_uri=${vars.spotify_redirect}&scope=${scopes}&state=state`;
+        let SpotifyUrl = `https://accounts.spotify.com/authorize?client_id=${variables.spotify_client}&response_type=code&redirect_uri=${variables.spotify_redirect}&scope=${scopes}&state=state`;
         return (<Container>
             <Row className="justify-content-md-center">
               <Col xl="10" lg="12" md="9">
