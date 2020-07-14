@@ -3,20 +3,14 @@ import estilos_login from './Login.module.css';
 import listening_gif from './../assets/img/listening.gif'
 import spotify_logo from './../assets/img/spotify.svg'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import vars from './../environment'
 import Axios from 'axios';
 
 class Login extends Component {
-    spotifyLogin = () => {
-        var scopes = 'user-read-private user-read-email user-library-read'
-        Axios.get(`https://accounts.spotify.com/authorize?client_id=
-            ${process.env.REACT_APP_SPOTIFY_CLIENT}&response_type=code&redirect_uri=
-            ${process.env.REACT_APP_SPOTIFY_REDIRECT}&scope=${scopes}&state=state`)
-            .then((data) => {
-                console.log("Se envio a spotify")
-            })
-    }
 
     render() {
+        let scopes = 'user-read-private user-read-email user-library-read'
+        let SpotifyUrl = `https://accounts.spotify.com/authorize?client_id=${vars.spotify_client}&response_type=code&redirect_uri=${vars.spotify_redirect}&scope=${scopes}&state=state`;
         return (<Container>
             <Row className="justify-content-md-center">
               <Col xl="10" lg="12" md="9">
@@ -51,13 +45,9 @@ class Login extends Component {
                                 <img src={spotify_logo} width="80" height="80" alt="Logo de spotify" />
                             </Col>
                             <Col md="6" className="text-center">
-                                <Button variant="success" onClick={
-                                    () => {
-                                        this.spotifyLogin()
-                                    }
-                                }>
+                                <a href={SpotifyUrl} className="btn btn-success">
                                     Iniciar sesion con Spotify
-                                </Button>
+                                </a>
                             </Col>
                         </Row>
                       </Col>

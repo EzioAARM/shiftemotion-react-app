@@ -3,6 +3,7 @@ import queryString from 'query-string';
 import Axios from 'axios';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import vars from './../environment'
 
 class LinkedAccount extends Component {
 
@@ -16,7 +17,7 @@ class LinkedAccount extends Component {
         if (localStorage.getItem("spotify-token") === null) {
             let params = queryString.parse(this.props.location.search)
             //localStorage.setItem("spotify-token", params.code);
-            Axios.post(process.env.REACT_APP_API_GATEWAY + '/login/token', {
+            Axios.post(vars.api_gateway_url + '/login/token', {
                 token: params.code
             }, {
                 headers: {
