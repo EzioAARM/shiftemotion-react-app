@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import estilos_login from './Login.module.css';
 import listening_gif from './../assets/img/listening.gif'
 import spotify_logo from './../assets/img/spotify.svg'
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import variables from '../globals'
-import Axios from 'axios';
 
 class Login extends Component {
 
