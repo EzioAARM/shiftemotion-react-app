@@ -27,7 +27,6 @@ class LinkedAccount extends Component {
             isSuccess: false,
             sideBackgroundImage: lostImage
         }
-        console.log(variables.spotify_redirect)
         let params = queryString.parse(this.props.location.search)
         if (localStorage.getItem("shiftemotiontoken") === null && localStorage.getItem("user-email") === null) {
             if (params.code) {
@@ -67,7 +66,7 @@ class LinkedAccount extends Component {
                             })
                         }
                     }).catch((shiftemotion_error) => {
-                        console.log(shiftemotion_error)
+                        
                         this.setState({
                             card_body: "Sucedio un error inesperado vinculando su cuenta",
                             card_header: "Hubo un error",
@@ -77,7 +76,6 @@ class LinkedAccount extends Component {
                         })
                     })
                 }).catch((refreshtoken_error) => {
-                    console.log(refreshtoken_error)
                     this.state = {
                         card_body: "Sucedio un error que no tuvimos en cuenta",
                         card_header: "Error",
