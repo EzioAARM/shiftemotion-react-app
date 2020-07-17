@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as serviceWorker from './serviceWorker';
-import {Switch, BrowserRouter as Router, Route, BrowserRouter, Redirect} from 'react-router-dom';
+import {Switch, BrowserRouter as Router, Route, BrowserRouter} from 'react-router-dom';
 import LinkedAccount from './linked-account/LinkedAccount'
 import Login from './Login/Login'
 import Home from './Home/Home'
@@ -13,19 +13,11 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/linked-account" component={LinkedAccount} />
-        <Route path="/home" component={Home} />
-        <Route path="/login" component={Login} exact>
+        <Route path="/" exact>
           {
-            localStorage.getItem("spotify-token") !== null ?
-              <Redirect to="/home" /> : 
+            localStorage.getItem("shiftemotiontoken") !== null && localStorage.getItem("user-email") === null ?
+              <Home></Home> : 
               <Login></Login>
-          }
-        </Route>
-        <Route path="/" component={Login} exact>
-          {
-            localStorage.getItem("spotify-token") !== null ?
-              <Redirect to="/home" /> : 
-              <Redirect to="/login" />
           }
         </Route>
       </Switch>
