@@ -8,7 +8,7 @@ import variables from '../globals'
 class Login extends Component {
 
     render() {
-        let scopes = 'user-read-private user-read-email user-library-read'
+        let scopes = 'user-read-private user-read-email user-library-read user-top-read'
         let SpotifyUrl = `https://accounts.spotify.com/authorize?client_id=${variables.spotify_client}&response_type=code&redirect_uri=${variables.spotify_redirect}&scope=${scopes}&state=state`;
         return (<Container>
             <Row className="justify-content-md-center">
