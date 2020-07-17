@@ -27,6 +27,7 @@ class LinkedAccount extends Component {
             isSuccess: false,
             sideBackgroundImage: lostImage
         }
+        console.log(variables.spotify_redirect)
         let params = queryString.parse(this.props.location.search)
         if (localStorage.getItem("shiftemotiontoken") === null && localStorage.getItem("user-email") === null) {
             if (params.code) {
