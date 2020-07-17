@@ -15,7 +15,7 @@ ReactDOM.render(
         <Route path="/linked-account" component={LinkedAccount} />
         <Route path="/" exact>
           {
-            localStorage.getItem("user-mail") !== null ?
+            localStorage.getItem("shiftemotiontoken") !== null && localStorage.getItem("user-email") === null ?
               <Home></Home> : 
               <Login></Login>
           }
