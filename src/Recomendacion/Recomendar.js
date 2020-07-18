@@ -26,7 +26,7 @@ class Recomendar extends Component {
                                             Resultado
                                         </Card.Header>
                                         <Card.Body>
-                                            <h2>Logramos identificar que te encuentras: </h2>
+                                            <h2>Logramos identificar que te encuentras: {this.state.imageResponse.emotion}</h2>
                                             <Row>
                                                 <Col>
                                                     <Table>

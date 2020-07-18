@@ -48,28 +48,6 @@ class Home extends Component {
         }
     }
 
-    renderRecommendation() {
-        try {
-            const contenido = this.state.recomendaciones.map((track) => {
-                return (<tr key={track.id}>
-                   <td>{track.name}</td>
-                   <td>{track.artist}</td>
-               </tr>)
-           })
-            this.setState({
-                filas: contenido
-            })
-        } catch (e) {
-            this.setState({
-                filas: (<tr>
-                    <th colSpan="2">
-                        No se pudieron recomendar canciones
-                    </th>
-                </tr>)
-            })
-        }
-    }
-
     render() {
         return this.state.isLoading ? <Loader /> : (
         <div>
@@ -89,26 +67,22 @@ class Home extends Component {
                                     </thead>
                                     <tbody>
                                         {
-                                            this.state.recomendaciones.map((track) => {
-                                                try {
-                                                    return (<tr key={track.id} onClick={
-                                                        () => {
-                                                            var win = window.open("https://open.spotify.com/track/" + track.id, '_blank');
-                                                            win.focus();
-                                                        }
-                                                    }>
+                                            Array.isArray(this.state.recomendaciones) ? this.state.recomendaciones.map((track) => {
+                                                return (<tr key={track.id} onClick={
+                                                    () => {
+                                                        var win = window.open("https://open.spotify.com/track/" + track.id, '_blank');
+                                                        win.focus();
+                                                    }
+                                                }>
                                                     <td>{track.name}</td>
                                                     <td>{track.artist}</td>
                                                 </tr>)
-                                                } catch (e) {
-                                                    return (<tr>
-                                                        <td>
-                                                            
-                                                        </td>
-                                                    </tr>)
-                                                }
                                                 
-                                        })
+                                        }) : (<tr>
+                                            <td>
+
+                                            </td>
+                                        </tr>)
                                         }
                                     </tbody>
                                 </Table>
