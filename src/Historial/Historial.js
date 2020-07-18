@@ -113,7 +113,7 @@ class Historial extends Component {
                                                     <tbody>
                                                         {
                                                             Array.isArray(this.state.selectedItem.canciones) ? this.state.selectedItem.canciones.map((track) => {
-                                                                return (<tr key={track.id} >
+                                                                return (<tr key={track.nombre} >
                                                                     <td>{track.nombre}</td>
                                                                     <td>{track.artista}</td>
                                                                 </tr>)
