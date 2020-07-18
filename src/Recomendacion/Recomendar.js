@@ -7,6 +7,10 @@ import variables from '../globals'
 
 class Recomendar extends Component {
 
+    state = {
+        showResult: false
+    }
+
     render() {
         return (<div>
                 <Header />
@@ -15,7 +19,7 @@ class Recomendar extends Component {
                     <Row>
                         <Col>
                             <Card>
-                                <Card.Header>
+                                (<Card.Header>
                                     Elige una foto
                                 </Card.Header>
                                 <Card.Body>
@@ -43,7 +47,7 @@ class Recomendar extends Component {
                                     }}>
 
                                     </FilePond>
-                                </Card.Body>
+                                </Card.Body>)
                             </Card>
                         </Col>
                     </Row>
