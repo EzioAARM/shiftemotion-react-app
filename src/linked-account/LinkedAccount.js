@@ -8,12 +8,14 @@ import variables from '../globals'
 import successImage from './../assets/img/success.gif'
 import errorImage from './../assets/img/error.gif'
 import lostImage from './../assets/img/lost.gif'
+import Loader from '../Layouts/Loader'
 
 class LinkedAccount extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
+            isLoading: true,
             query_params: this.props.location.search,
             card_body: (
                 <span>
@@ -50,6 +52,7 @@ class LinkedAccount extends Component {
                             localStorage.setItem("shiftemotiontoken", json_response.Data)
                             localStorage.setItem("user-email", json_response.email)
                             this.setState({
+                                isLoading: false,
                                 card_header: "Vinculacion exitosa",
                                 card_body: "¡Bienvenido! Estamos muy contentos que te unieras a nuestra gran familia de ShiftEmotion, ahorta puedes dirigirte a la aplicacion y disfrutar",
                                 classNameButton: "btn btn-success",
@@ -58,6 +61,7 @@ class LinkedAccount extends Component {
                             })
                         } else {
                             this.setState({
+                                isLoading: false,
                                 card_body: "Sucedio un error inesperado vinculando su cuenta",
                                 card_header: "Hubo un error",
                                 classNameButton: "btn btn-danger",
@@ -68,6 +72,7 @@ class LinkedAccount extends Component {
                     }).catch((shiftemotion_error) => {
                         
                         this.setState({
+                            isLoading: false,
                             card_body: "Sucedio un error inesperado vinculando su cuenta",
                             card_header: "Hubo un error",
                             classNameButton: "btn btn-danger",
@@ -77,6 +82,7 @@ class LinkedAccount extends Component {
                     })
                 }).catch((refreshtoken_error) => {
                     this.state = {
+                        isLoading: false,
                         card_body: "Sucedio un error que no tuvimos en cuenta",
                         card_header: "Error",
                         classNameButton: "btn btn-danger",
@@ -87,6 +93,7 @@ class LinkedAccount extends Component {
             } else if (params.error) {
                 // No dio permisos
                 this.state = {
+                    isLoading: false,
                     card_body: "No pudimos acceder a tu cuenta debido a falta de permisos, esperamos que en otra ocasión podamos llevarnos mejor. ¡Te esperaremos!",
                     card_header: "No tenemos malas intenciones.",
                     classNameButton: "btn btn-danger",
@@ -96,6 +103,7 @@ class LinkedAccount extends Component {
             }
         } else {
             this.state = {
+                isLoading: false,
                 card_body: (
                 <span>
                     <br />  
@@ -112,7 +120,7 @@ class LinkedAccount extends Component {
     }
 
     render() {
-        return (
+        return this.state.isLoading ? <Loader /> : (
             <Container>
                 <Router>
                     <Row>

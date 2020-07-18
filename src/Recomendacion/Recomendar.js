@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from './../Layouts/Headers'
-import { FilePond, registerPlugin } from 'react-filepond'
+import { FilePond } from 'react-filepond'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import Axios from 'axios'
 import variables from '../globals'
@@ -19,14 +19,25 @@ class Recomendar extends Component {
                                     Elige una foto
                                 </Card.Header>
                                 <Card.Body>
-                                    <FilePond allowImagePreview={true} allowMultiple={false} server={{
+                                    <FilePond allowFileEncode={true} allowImagePreview={true} allowMultiple={false} server={{
                                         process: (fieldName, file, metadata, load, error, progress, abort) => {
-                                            Axios.post(variables.load_balancer_url + "/", file, {
+                                            console.log(fieldName)
+                                            var data = new FormData()
+                                            data.append('file', file)
+                                            data.append('userID', localStorage.getItem('user-email'))
+                                            Axios({
+                                                method: 'post',
+                                                url: variables.load_balancer_url + "/upload",
                                                 headers: {
-                                                  'Content-Type': 'multipart/form-data'
-                                                }
-                                            }).then(data => {
-                                                console.log(data)
+                                                    'Content-Type': 'multipart/form-data'
+                                                },
+                                                data: data
+                                            }).then(response => {
+                                                console.log(response.data)
+                                                load(file.name)
+                                            }).catch(error => {
+                                                console.log(error)
+                                                abort()
                                             })
                                         }
                                     }}>
