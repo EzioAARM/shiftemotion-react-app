@@ -5,7 +5,7 @@ const variables = {
         (":" + window.location.port) : "") + "/linked-account",
     spotify_base64_codes: "Zjk0MGQ2MTk4OGE2NDg0ZmJkY2M5OGE1OTZkNDc5ZWM6OGZiMzA1ZjA3NzIzNGZhMjhmNjI5YThlYjFmMTI4MmQ=",
     api_gateway_url: "https://8m717iy4bh.execute-api.us-east-1.amazonaws.com/Prod",
-    load_balancer_url: "http://shiftemotionspotifyblancer-378386110.us-west-2.elb.amazonaws.com/"
+    load_balancer_url: "http://shiftEmotionSpotifyBlancer-1815674166.us-east-1.elb.amazonaws.com"
 }
 
 export default variables;

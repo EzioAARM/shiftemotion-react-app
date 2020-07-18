@@ -6,6 +6,7 @@ import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 import * as FilePond from 'filepond'
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+import FilePondPluginFileEncode from 'filepond-plugin-file-encode'
 import * as serviceWorker from './serviceWorker';
 import {Switch, BrowserRouter as Router, Route, BrowserRouter} from 'react-router-dom';
 import LinkedAccount from './linked-account/LinkedAccount'
@@ -16,6 +17,7 @@ import Perfil from './Perfil/Perfil'
 import Recomendar from './Recomendacion/Recomendar';
 
 FilePond.registerPlugin(FilePondPluginImagePreview)
+FilePond.registerPlugin(FilePondPluginFileEncode)
 
 ReactDOM.render(
   (<BrowserRouter>
